@@ -47,33 +47,8 @@ Blank Project for ticket sniping, with django/react and postgres
  
 ### REMAINING ISSUES
 1. some teething problems with volumes, if there are indiscriminate volumes dangling around that are clogging up your machine, check with docker volume ls and use docker volume rm etc
-1. still very untested, expect some bugs in the framework to arise when developing.
 1. builds are still long and need to be optimised, i'm still commiting all the packages and volumes to github which really isn't ideal, need to look over this once the basic functionality is up.
 
-## To Do
-
-### Dev Ops
-1. ~~finish a simple front end template.~~
-1. ~~serve dummy data from the database to the front end.~~
-1. ~~Set up a web scraping container with the environment needed to scrape data~~
-1. test the web scraper serves data to the front end via the db and django, set up cronjobs.
-1. start local development (wednesday meeting)
-1. ~~write deployment docker files, one for a staging site and one for a live site.~~
-1. ~~configure an nginx container.~~
-1. register domain.
-1. use nginx with a dynamic dns to serve to a staging site and a live site on registered domains.
-
-### Scraping
-1. write and test scripts to gather data for seats
-1. test these scripts on multiple plays
-1. input retreieved data into the database
-
-### Database
-1. model a robust database, because it needs to be put into models.py and needs to be rigourous, would be hard to change after inception
-1. draw ER diagrams etc for this database.
-
-### WebDev
-1. functionality and website concept needs to be drawn up.
 
 
 
