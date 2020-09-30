@@ -1,0 +1,44 @@
+ version: '3.7'
+
+ services:
+   frontend:
+     container_name: frontend
+     hostname: frontend
+     build: "frontend/"
+     command: sh /code/frontend/entrypoint.sh
+     working_dir: /code/frontend
+     env_file: .env
+     ports:
+       - 8101:3000
+     volumes:
+       - ./frontend:/code/frontend
+       - '/code/frontend/node_modules'
+   database:
+     container_name: database
+     hostname: database 
+     build: "database/postgres/"
+     env_file: .env
+     volumes:
+       - ./database/local_volume/pgdata:/var/lib/postgresql/data/ # Preserves db between runs.
+     ports:
+       - 5432
+   backend:
+     container_name: backend
+     hostname: backend
+     build: "backend/"
+     entrypoint: sh /code/backend/entrypoint.sh
+     volumes:
+       - ./backend:/code/backend
+     env_file: .env
+     ports:
+       - 8000:8000
+     links:
+       - database
+       - frontend
+     depends_on:
+       - database
+       - frontend
+ volumes:
+     backend:
+     frontend:
+     pgdata:
