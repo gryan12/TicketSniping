@@ -1,6 +1,6 @@
 # docker-django-react
 
-Blank Project for ticket sniping, with django/react and postgres
+Group Project for ticket sniping, with django/react and postgres
 
 ## Prerequisites
 
